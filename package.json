@@ -8,7 +8,7 @@
     "test": "npm run compile && npm run compile-tests && jest",
     "compile-tests": "tsc -p tsconfig-base.json",
     "compile": "tsc -p tsconfig.json",
-    "prepublish": "npm run compile && npm run jest"
+    "prepublishOnly": "npm run compile && npm run jest"
   },
   "repository": {
     "type": "git",
