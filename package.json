@@ -1,0 +1,54 @@
+{
+  "name": "react-native-stager",
+  "version": "0.1.0",
+  "description": "A performant wizard-like multi stages component for React Native without a router ",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "test": "npm run compile && npm run compile-tests && jest",
+    "compile-tests": "tsc -p tsconfig-base.json",
+    "compile": "tsc -p tsconfig.json",
+    "prepublish": "npm run compile && npm run jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pocesar/react-native-stager.git"
+  },
+  "keywords": [
+    "react-native",
+    "react",
+    "react-native-component",
+    "wizard",
+    "performant",
+    "wizard-steps"
+  ],
+  "author": "Paulo Cesar <https://github.com/pocesar>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pocesar/react-native-stager/issues"
+  },
+  "homepage": "https://github.com/pocesar/react-native-stager#readme",
+  "dependencies": { },
+  "peerDependencies": {
+    "react-native": "*",
+    "react": "*",
+    "prop-types": "*",
+    "@types/react-native": "*",
+    "@types/react": "*",
+    "@types/prop-types": "*"
+  },
+  "devDependencies": {
+    "@types/enzyme": "^2.8.4",
+    "enzyme": "^2.9.1",
+    "@types/jest": "^20.0.6",
+    "jest": "^20.0.4",
+    "@types/react-test-renderer": "^15.5.2",
+    "react-test-renderer": "^16.0.0-beta.2",
+    "typescript": "^2.4.2"
+  },
+  "jest": {
+    "preset": "react-native",
+    "collectCoverage": true,
+    "collectCoverageFrom": ["lib/index.js"]
+  }
+}

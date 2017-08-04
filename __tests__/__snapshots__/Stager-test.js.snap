@@ -1,0 +1,869 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Stager /> goes to next and prev stage 1`] = `
+<View
+  keyboardVerticalOffset={-15}
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "maxHeight": 1284,
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "bottom": 0,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": 3,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 3,
+            "marginBottom": 15,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flex": 0.7,
+              "flexDirection": "row",
+              "height": 2,
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 2,
+                  "marginRight": 4,
+                  "padding": 2,
+                },
+                Object {
+                  "flex": 0.25,
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 2,
+                  "marginRight": 4,
+                  "padding": 2,
+                },
+                Object {
+                  "flex": 0.25,
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 0.3,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View>
+      <RCTScrollView
+        contentContainerStyle={
+          Object {
+            "paddingBottom": 20,
+          }
+        }
+        keyboardShouldPersistTaps="handled"
+        style={
+          Array [
+            Object {
+              "marginTop": 20,
+            },
+            Object {},
+          ]
+        }
+      >
+        <View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+          >
+            hello
+          </Text>
+        </View>
+      </RCTScrollView>
+    </View>
+    <View
+      style={
+        Object {
+          "bottom": 0,
+          "height": 40,
+          "left": 0,
+          "right": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "justifyContent": "space-between",
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`<Stager /> goes to next and prev stage 2`] = `"received is not a function"`;
+
+exports[`<Stager /> goes to next and prev stage 3`] = `
+<View
+  keyboardVerticalOffset={-15}
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "maxHeight": 1284,
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "bottom": 0,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": 3,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 3,
+            "marginBottom": 15,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flex": 0.7,
+              "flexDirection": "row",
+              "height": 2,
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 2,
+                  "marginRight": 4,
+                  "padding": 2,
+                },
+                Object {
+                  "flex": 0.25,
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 2,
+                  "marginRight": 4,
+                  "padding": 2,
+                },
+                Object {
+                  "flex": 0.25,
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 0.3,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View>
+      <RCTScrollView
+        contentContainerStyle={
+          Object {
+            "paddingBottom": 20,
+          }
+        }
+        keyboardShouldPersistTaps="handled"
+        style={
+          Array [
+            Object {
+              "marginTop": 20,
+            },
+            Object {},
+          ]
+        }
+      >
+        <View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+          >
+            hello
+          </Text>
+        </View>
+      </RCTScrollView>
+    </View>
+    <View
+      style={
+        Object {
+          "bottom": 0,
+          "height": 40,
+          "left": 0,
+          "right": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "justifyContent": "space-between",
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`<Stager /> goes to next and prev stage 4`] = `
+<View
+  keyboardVerticalOffset={-15}
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "maxHeight": 1284,
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "bottom": 0,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": 3,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 3,
+            "marginBottom": 15,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flex": 0.7,
+              "flexDirection": "row",
+              "height": 2,
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 2,
+                  "marginRight": 4,
+                  "padding": 2,
+                },
+                Object {
+                  "flex": 0.25,
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 2,
+                  "marginRight": 4,
+                  "padding": 2,
+                },
+                Object {
+                  "flex": 0.25,
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 0.3,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View>
+      <RCTScrollView
+        contentContainerStyle={
+          Object {
+            "paddingBottom": 20,
+          }
+        }
+        keyboardShouldPersistTaps="handled"
+        style={
+          Array [
+            Object {
+              "marginTop": 20,
+            },
+            Object {},
+          ]
+        }
+      >
+        <View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+          >
+            hello
+          </Text>
+        </View>
+      </RCTScrollView>
+    </View>
+    <View
+      style={
+        Object {
+          "bottom": 0,
+          "height": 40,
+          "left": 0,
+          "right": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "justifyContent": "space-between",
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`<Stager /> instance props 1`] = `
+<View
+  keyboardVerticalOffset={-15}
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "maxHeight": 1284,
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "bottom": 0,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": 3,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 3,
+            "marginBottom": 15,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flex": 0.7,
+              "flexDirection": "row",
+              "height": 2,
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 2,
+                  "marginRight": 4,
+                  "padding": 2,
+                },
+                Object {
+                  "flex": 0.25,
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 2,
+                  "marginRight": 4,
+                  "padding": 2,
+                },
+                Object {
+                  "flex": 0.25,
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 0.3,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View>
+      <RCTScrollView
+        contentContainerStyle={
+          Object {
+            "paddingBottom": 20,
+          }
+        }
+        keyboardShouldPersistTaps="handled"
+        style={
+          Array [
+            Object {
+              "marginTop": 20,
+            },
+            Object {},
+          ]
+        }
+      >
+        <View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+          >
+            hello
+          </Text>
+        </View>
+      </RCTScrollView>
+    </View>
+    <View
+      style={
+        Object {
+          "bottom": 0,
+          "height": 40,
+          "left": 0,
+          "right": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "justifyContent": "space-between",
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`<Stager /> loaded 1`] = `
+<View
+  keyboardVerticalOffset={-15}
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "maxHeight": 1284,
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "bottom": 0,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": 3,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 3,
+            "marginBottom": 15,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flex": 0.7,
+              "flexDirection": "row",
+              "height": 2,
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 2,
+                  "marginRight": 4,
+                  "padding": 2,
+                },
+                Object {
+                  "flex": 0.16666666666666666,
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 2,
+                  "marginRight": 4,
+                  "padding": 2,
+                },
+                Object {
+                  "flex": 0.16666666666666666,
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 2,
+                  "marginRight": 4,
+                  "padding": 2,
+                },
+                Object {
+                  "flex": 0.16666666666666666,
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 0.3,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View>
+      <RCTScrollView
+        contentContainerStyle={
+          Object {
+            "paddingBottom": 20,
+          }
+        }
+        keyboardShouldPersistTaps="handled"
+        style={
+          Array [
+            Object {
+              "marginTop": 20,
+            },
+            Object {},
+          ]
+        }
+      >
+        <View />
+      </RCTScrollView>
+    </View>
+    <View
+      style={
+        Object {
+          "bottom": 0,
+          "height": 40,
+          "left": 0,
+          "right": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "justifyContent": "space-between",
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`<Stager /> loaded 2`] = `"received is not a function"`;
+
+exports[`<Stager /> renders correctly 1`] = `
+<View
+  keyboardVerticalOffset={-15}
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "maxHeight": 1284,
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "bottom": 0,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Object {
+          "height": 3,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 3,
+            "marginBottom": 15,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "flex-start",
+              "flex": 0.7,
+              "flexDirection": "row",
+              "height": 2,
+              "justifyContent": "space-between",
+            }
+          }
+        >
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 2,
+                  "marginRight": 4,
+                  "padding": 2,
+                },
+                Object {
+                  "flex": 0.5,
+                },
+              ]
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 0.3,
+            }
+          }
+        />
+      </View>
+    </View>
+    <View>
+      <RCTScrollView
+        contentContainerStyle={
+          Object {
+            "paddingBottom": 20,
+          }
+        }
+        keyboardShouldPersistTaps="handled"
+        style={
+          Array [
+            Object {
+              "marginTop": 20,
+            },
+            Object {},
+          ]
+        }
+      >
+        <View />
+      </RCTScrollView>
+    </View>
+    <View
+      style={
+        Object {
+          "bottom": 0,
+          "height": 40,
+          "left": 0,
+          "right": 0,
+        }
+      }
+    >
+      <View
+        style={
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "flexGrow": 1,
+            "justifyContent": "space-between",
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;

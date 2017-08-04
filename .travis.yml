@@ -1,0 +1,9 @@
+language: node_js
+before_install:
+  - npm i -g npm-install-peers coveralls
+before_script:
+  - npm-install-peers
+after_success:
+  - cat ./coverage/lcov.info | coveralls
+node_js:
+  - "8"

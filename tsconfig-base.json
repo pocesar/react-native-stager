@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "es2015",
+    "jsx": "react-native",
+    "sourceMap": true,
+    "alwaysStrict": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true
+  },
+  "files": [
+    "./__tests__/Stager-test.tsx"
+  ]
+}
