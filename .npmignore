@@ -1,7 +1,9 @@
 __tests__
 *.ts
 tsconfig.json
+tsconfig-base.json
 src
 README.md
 .travis.yml
 example
+coverage
