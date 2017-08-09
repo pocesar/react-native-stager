@@ -745,6 +745,72 @@ exports[`<Stager /> loaded 1`] = `
 
 exports[`<Stager /> loaded 2`] = `"received is not a function"`;
 
+exports[`<Stager /> progress and buttons 1`] = `
+<View
+  keyboardVerticalOffset={-15}
+  onLayout={[Function]}
+  style={
+    Object {
+      "bottom": 0,
+      "left": 0,
+      "maxHeight": 1284,
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        undefined,
+        Object {
+          "bottom": 0,
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+    >
+      1
+    </Text>
+    <View>
+      <RCTScrollView
+        contentContainerStyle={
+          Object {
+            "paddingBottom": 20,
+          }
+        }
+        keyboardShouldPersistTaps="handled"
+        style={
+          Array [
+            Object {
+              "marginTop": 20,
+            },
+            Object {},
+          ]
+        }
+      >
+        <View />
+      </RCTScrollView>
+    </View>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+    >
+      true
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`<Stager /> progress and buttons 2`] = `"received is not a function"`;
+
 exports[`<Stager /> renders correctly 1`] = `
 <View
   keyboardVerticalOffset={-15}

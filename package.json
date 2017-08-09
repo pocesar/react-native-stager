@@ -1,6 +1,6 @@
 {
   "name": "react-native-stager",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A performant wizard-like multi stages component for React Native without a router ",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",

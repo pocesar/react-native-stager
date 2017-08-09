@@ -6,7 +6,7 @@ import React from 'react'
 import renderer from 'react-test-renderer'
 import { StyleSheet, Text, Button } from 'react-native'
 //import { shallow } from 'enzyme'
-import Stager, { Stage } from '../lib'
+import Stager, { Stage, StageProgress, StageButtons } from '../lib'
 
 describe('<Stager />', () => {
   test('throws when no stage', () => {
@@ -180,4 +180,53 @@ describe('<Stager />', () => {
     expect(changed).toBe(4)
     expect(s.state.currentStage).toBe('1')
   })
+
+  test('progress and buttons', async (done) => {
+    expect.assertions(8)
+
+    const stager = renderer.create(
+      <Stager>
+        <StageProgress>
+          {({ context }) => {
+            expect(context.currentStage()).toMatch(/(1|2)/)
+            return <Text>{context.currentStage()}</Text>
+          }}
+        </StageProgress>
+
+        <Stage key="1">
+          {() => null}
+        </Stage>
+
+        <Stage key="2">
+          {() => null}
+        </Stage>
+
+        <StageButtons>
+          {({ context }) => {
+            if (context.currentStage() === '1') {
+              expect(context.has('next')).toBe(true)
+              expect(context.has('prev')).toBe(false)
+            } else {
+              expect(context.has('next')).toBe(false)
+              expect(context.has('prev')).toBe(true)
+            }
+            return <Text>{`${context.has('next')}`}</Text>
+          }}
+        </StageButtons>
+      </Stager>
+    )
+
+    await (stager.getInstance() as Stager).notify()
+
+    expect(stager.toJSON()).toMatchSnapshot()
+
+    await (stager.getInstance() as Stager).next()
+
+    expect(stager.toJSON()).toThrowErrorMatchingSnapshot()
+
+    setTimeout(() => {
+      done()
+    })
+  })
+
 })

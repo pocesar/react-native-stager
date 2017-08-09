@@ -14,34 +14,28 @@ import {
 } from 'react-native'
 import * as PropTypes from 'prop-types'
 
-export interface StagePassProps {
-  instance: Stage;
-  context: ContextFunctions;
+export interface StagePassContext {
+  context: Stager;
 }
 
-export interface StageProps {
+export interface StagePassProps extends StagePassContext {
+  instance: Stage;
+}
+
+export interface StagePassPropsChild<Props> {
+  children: (props: Props) => React.ReactNode;
+}
+
+export interface StageProps extends StagePassPropsChild<StagePassProps> {
   key: string;
   maxHeight?: () => number;
-  children?: (props: StagePassProps) => React.ReactNode;
   continue?: () => boolean;
   loaded?: (cb: () => void) => void;
   noPrevious?: boolean;
 }
 
-
-export interface ContextFunctions {
-  getStage: Function;
-  setStage: Function;
-  nextStage: Function;
-  prevStage: Function;
-  has: Function;
-  noPrevious: Function;
-  canContinue: Function;
-  notify: Function;
-}
-
 export interface Context {
-  fn: ContextFunctions;
+  fn: Stager;
 }
 
 export interface Styles {
@@ -166,16 +160,54 @@ export class Stage extends React.Component<StageProps, never> {
           contentContainerStyle={styles.scrollviewContainer}
           style={[styles.scrollview, this.props.maxHeight ? { maxHeight: this.props.maxHeight() } : {}]}
           >
-          {typeof children === 'function' ? children(this.passProps) : children}
+          {children(this.passProps)}
         </ScrollView>
       </View>
       )
   }
 }
 
+export interface StageConfig extends StagePassPropsChild<StagePassContext> {
+
+}
+
+export class StageButtons extends React.Component<StageConfig> {
+  static contextTypes: Context = {
+    fn: PropTypes.any as any
+  }
+
+  context: Context;
+
+  passProps: StagePassContext = {
+    context: this.context.fn
+  }
+
+  render(): any {
+    return this.props.children(this.passProps)
+  }
+}
+
+export class StageProgress extends React.Component<StageConfig> {
+  static contextTypes: Context = {
+    fn: PropTypes.any as any
+  }
+
+  context: Context;
+
+  passProps: StagePassContext = {
+    context: this.context.fn
+  }
+
+  render(): any {
+    return this.props.children(this.passProps)
+  }
+}
+
 export interface StagerState {
   currentStage: string | null;
   stage: any;
+  hasProgress: StageProgress | null;
+  hasButtons: StageButtons | null;
   stages: string[];
   stageState: {
     noPrevious: boolean;
@@ -200,6 +232,8 @@ export class Stager extends React.Component<StagerProps, StagerState> {
       currentStage: null,
       stages: [],
       stage: null,
+      hasButtons: null,
+      hasProgress: null,
       stageState: {
         noPrevious: false,
         canContinue: null
@@ -250,6 +284,8 @@ export class Stager extends React.Component<StagerProps, StagerState> {
   shouldComponentUpdate(nextProps: StagerProps, nextState: StagerState) {
     return this.state.stages !== nextState.stages ||
            this.state.stage !== nextState.stage ||
+           this.state.hasButtons !== nextState.hasButtons ||
+           this.state.hasProgress !== nextState.hasProgress ||
            this.state.time !== nextState.time ||
            this.state.stageState.canContinue !== nextState.stageState.canContinue ||
            this.state.stageState.noPrevious !== nextState.stageState.noPrevious ||
@@ -319,6 +355,10 @@ export class Stager extends React.Component<StagerProps, StagerState> {
     return null
   }
 
+  currentStage = () => {
+    return this.state.currentStage
+  }
+
   prevStage = () => {
     if (this.state.currentStage) {
       return this.state.stages[this.state.stages.indexOf(this.state.currentStage) - 1 % this.state.stages.length]
@@ -327,17 +367,35 @@ export class Stager extends React.Component<StagerProps, StagerState> {
     return null
   }
 
-  componentDidMount() {
+  gatherButtonsAndProgress = (cb?: () => void) => {
+    let hasButtons: StageButtons | null = null
+    let hasProgress: StageProgress | null = null
+
+    React.Children.forEach(this.props.children, (child) => {
+      const childType: React.ComponentClass = (child as any)['type']
+
+      if (childType === StageProgress) {
+        hasProgress = child as any
+      } else if (childType === StageButtons) {
+        hasButtons = child as any
+      }
+    })
+
+    this.setState({
+      hasButtons,
+      hasProgress
+    }, cb)
+  }
+
+  gatherStages = (cb?: () => void) => {
     const stagesNames: string[] = []
 
     React.Children.forEach(this.props.children, (child) => {
-      const c = (child as any)['type'] === Stage ? child : null
+      const childType: React.ComponentClass = (child as any)['type']
 
-      if (c) {
+      if (childType === Stage) {
         stagesNames.push((child as any)['key'])
       }
-
-      return c
     })
 
     if (!stagesNames.length) {
@@ -346,8 +404,14 @@ export class Stager extends React.Component<StagerProps, StagerState> {
 
     this.setState({
       stages: stagesNames,
-    }, () => {
-      this.setStage(this.state.stages[0], 0)
+    }, cb)
+  }
+
+  componentDidMount() {
+    this.gatherStages(() => {
+      this.setStage(this.state.stages[0], 0).then(() => {
+        this.gatherButtonsAndProgress()
+      })
     })
   }
 
@@ -395,9 +459,9 @@ export class Stager extends React.Component<StagerProps, StagerState> {
   render(){
     return (
       <KeyboardAvoidingView behavior="position" style={styles.stageContainer} keyboardVerticalOffset={-15}>
-        {this.progress()}
+        {this.state.hasProgress ? this.state.hasProgress : this.progress()}
         {this.state.time && this.state.stage}
-        {this.buttons()}
+        {this.state.hasButtons ? this.state.hasButtons : this.buttons()}
       </KeyboardAvoidingView>
     )
   }
