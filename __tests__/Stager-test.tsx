@@ -130,7 +130,7 @@ describe('<Stager />', () => {
     await (stager.getInstance() as Stager).next()
   })
 
-  test('continue', async () => {
+  test('continue', async (done) => {
     const stager = renderer.create(
       <Stager>
         <Stage key="stuff1" continue={() => false}>
@@ -145,7 +145,10 @@ describe('<Stager />', () => {
 
     const _stager: Stager = stager.getInstance()
 
-    expect(_stager.state.stageState.canContinue).toBe(false)
+    setTimeout(() => {
+      expect(_stager.state.stageState.canContinue).toBe(false)
+      done()
+    })
   })
 
   test('onChange', async () => {

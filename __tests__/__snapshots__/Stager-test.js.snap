@@ -64,6 +64,9 @@ exports[`<Stager /> goes to next and prev stage 1`] = `
                 Object {
                   "flex": 0.25,
                 },
+                Object {
+                  "backgroundColor": "blue",
+                },
               ]
             }
           />
@@ -78,6 +81,9 @@ exports[`<Stager /> goes to next and prev stage 1`] = `
                 },
                 Object {
                   "flex": 0.25,
+                },
+                Object {
+                  "backgroundColor": "gray",
                 },
               ]
             }
@@ -213,6 +219,9 @@ exports[`<Stager /> goes to next and prev stage 3`] = `
                 Object {
                   "flex": 0.25,
                 },
+                Object {
+                  "backgroundColor": "blue",
+                },
               ]
             }
           />
@@ -227,6 +236,9 @@ exports[`<Stager /> goes to next and prev stage 3`] = `
                 },
                 Object {
                   "flex": 0.25,
+                },
+                Object {
+                  "backgroundColor": "gray",
                 },
               ]
             }
@@ -360,6 +372,9 @@ exports[`<Stager /> goes to next and prev stage 4`] = `
                 Object {
                   "flex": 0.25,
                 },
+                Object {
+                  "backgroundColor": "blue",
+                },
               ]
             }
           />
@@ -374,6 +389,9 @@ exports[`<Stager /> goes to next and prev stage 4`] = `
                 },
                 Object {
                   "flex": 0.25,
+                },
+                Object {
+                  "backgroundColor": "gray",
                 },
               ]
             }
@@ -507,6 +525,9 @@ exports[`<Stager /> instance props 1`] = `
                 Object {
                   "flex": 0.25,
                 },
+                Object {
+                  "backgroundColor": "blue",
+                },
               ]
             }
           />
@@ -521,6 +542,9 @@ exports[`<Stager /> instance props 1`] = `
                 },
                 Object {
                   "flex": 0.25,
+                },
+                Object {
+                  "backgroundColor": "gray",
                 },
               ]
             }
@@ -654,20 +678,8 @@ exports[`<Stager /> loaded 1`] = `
                 Object {
                   "flex": 0.16666666666666666,
                 },
-              ]
-            }
-          />
-          <View
-            style={
-              Array [
                 Object {
-                  "borderRadius": 10,
-                  "height": 2,
-                  "marginRight": 4,
-                  "padding": 2,
-                },
-                Object {
-                  "flex": 0.16666666666666666,
+                  "backgroundColor": "blue",
                 },
               ]
             }
@@ -683,6 +695,27 @@ exports[`<Stager /> loaded 1`] = `
                 },
                 Object {
                   "flex": 0.16666666666666666,
+                },
+                Object {
+                  "backgroundColor": "gray",
+                },
+              ]
+            }
+          />
+          <View
+            style={
+              Array [
+                Object {
+                  "borderRadius": 10,
+                  "height": 2,
+                  "marginRight": 4,
+                  "padding": 2,
+                },
+                Object {
+                  "flex": 0.16666666666666666,
+                },
+                Object {
+                  "backgroundColor": "gray",
                 },
               ]
             }
@@ -874,6 +907,9 @@ exports[`<Stager /> renders correctly 1`] = `
                 },
                 Object {
                   "flex": 0.5,
+                },
+                Object {
+                  "backgroundColor": "blue",
                 },
               ]
             }
