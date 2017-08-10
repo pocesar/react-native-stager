@@ -1,5 +1,6 @@
 language: node_js
 before_install:
+  - npm i npm@4 -g
   - npm i -g npm-install-peers coveralls
 before_script:
   - npm-install-peers
