@@ -121,13 +121,13 @@ export class Stage extends React.Component<StageProps, never> {
 
   context: Context;
 
-  refresh() {
+  refresh = async () => {
     if (this.props.continue) {
-      this.context.fn.canContinue(this.props.continue())
+      return this.context.fn.canContinue(this.props.continue())
     }
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     if (this.props.loaded) {
       this.props.loaded(() => {
         InteractionManager.runAfterInteractions(() => {
@@ -136,9 +136,8 @@ export class Stage extends React.Component<StageProps, never> {
       })
     }
 
-    this.context.fn.noPrevious(!!this.props.noPrevious)
-
-    this.refresh()
+    await this.context.fn.noPrevious(!!this.props.noPrevious)
+    await this.refresh()
   }
 
   shouldComponentUpdate(nextProps: StageProps, nextState: never, nextContext: Context) {
@@ -426,6 +425,9 @@ export class Stager extends React.Component<StagerProps, StagerState> {
                   styles.progressIndicator,
                   {
                     flex: (1 / this.state.stages.length) / 2,
+                  },
+                  {
+                    backgroundColor: this.state.currentStage && this.state.stages.indexOf(stage) <= this.state.stages.indexOf(this.state.currentStage) ? 'blue' : 'gray'
                   }
                  ]} />
               )

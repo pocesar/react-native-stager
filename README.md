@@ -25,7 +25,7 @@ class MyWizard extends React.Component {
         // direction = 1 = next | -1 = prev | 0 = reset / initial
       }}>
         <Stage key="step 1" continue={() => true}>
-          {({ context }) => (
+          {({ instance, context }) => (
             <View>
               <TouchableOpacity onPress={context.notify}>
                 <Text>{'Hello'}</Text>
@@ -46,6 +46,83 @@ class MyWizard extends React.Component {
 
 export default MyWizard
 ```
+
+## Components and API
+
+`Stager`
+
+The root component that will hold the steps. Accepts an `onChange` prop that receives the transitioning stage name and the direction (-1 = prev / 1 = next / 0 = reset/initial).
+Can be safely nested.
+
+```tsx
+<Stager onChange={(stage, direction) => {
+  // do something nice
+  }}>
+<Stager>
+```
+
+`Stage`
+
+Need to set inside `Stager`. Can use `continue`, `noPrevious` and `loaded` props.
+Notice that the children must always be a function. The `key` prop is required.
+
+It receives an object with `instance` (this current `Stage`) and
+`context` (the current `Stager`)
+
+```tsx
+<Stager>
+  <Stage key="step 1">
+    {({ instance, context }) => (
+      <Text>{'This is step 1'}</Text>
+    )}
+  </Stage>
+</Stager>
+```
+
+When using `continue`, you always need to signal to the `Stage` that it should re-evaluate the
+`continue` function, to see if you're able to continue. This is so the component doesn't
+re-render everytime everytime a children changes.
+
+```tsx
+<Stager>
+  <Stage
+    key="step 1"
+    continue={() => this.state.canContinue}
+    >
+    {({ instance, context }) => (
+      <View>
+        <Text>{'This is step 1'}</Text>
+        <Button title="can continue" onPress={() => {
+          this.setState({
+            canContinue: true
+          }, instance.refresh)
+        }} />
+      </View>
+    )}
+  </Stage>
+
+  <Stage
+    key="step 2"
+    loaded={(cb) => this.setState({ canContinue: false }, cb)}
+    continue={() => this.state.canContinue}
+    >
+    {({ instance, context }) => (
+      <View>
+        <Text>{'This is step 1'}</Text>
+        <Button title="can continue" onPress={() => {
+          this.setState({
+            canContinue: true
+          }, instance.refresh)
+        }} />
+      </View>
+    )}
+  </Stage>
+</Stager>
+```
+
+`StageButtons`
+
+`StageProgress`
 
 ## Caveats
 

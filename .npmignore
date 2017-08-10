@@ -1,5 +1,6 @@
 __tests__
 *.ts
+!*.d.ts
 tsconfig.json
 tsconfig-base.json
 src
