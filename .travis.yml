@@ -1,11 +1,10 @@
 language: node_js
-sudo: required
 before_install:
   - npm i npm@4 -g --progress=false
   - npm i -g npm-install-peers coveralls --progress=false
 before_script:
   - npm-install-peers
-  - npm i react@16.0.0-alpha.12 --progress=false
+  - npm i react@16.0.0-alpha.12 --progress=false --verbose
 after_success:
   - cat ./coverage/lcov.info | coveralls
 node_js:
