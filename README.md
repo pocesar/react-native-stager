@@ -122,7 +122,55 @@ re-render everytime everytime a children changes.
 
 `StageButtons`
 
+The internal implementation of the StageButtons are merely for a quick prototype standpoint (to get the stage going),
+and you should style if using your own. It doesn't matter where you put them, they will always be below the current
+active stage. Notice that you CAN set the style to use `position: absolute` and place it anywhere in the stage.
+
+```tsx
+<Stager>
+  <StageButtons>
+    {({ context }) => (
+      <View>
+        <Button title="<" onPress={context.prev} />
+        <Button title=">" onPress={context.next} />
+      </View>
+    )}
+  </StageButtons>
+</Stager>
+```
+
 `StageProgress`
+
+The same thing with `StageButtons`, it's just an ugly placeholder to show functionality. Replace it with your own
+
+```tsx
+<Stager>
+  <StageProgress>
+    {({ context }) => (
+      <View key="progress" style={styles.progressView}>
+        <View  style={styles.progressOutterFlex}>
+          <View style={styles.progressFlex}>
+            {context.state.stages.map((stage, index) => (
+                <View key={index} style={[
+                  styles.progressIndicator,
+                  {
+                    flex: (1 / context.state.stages.length) / 2,
+                  },
+                  {
+                    backgroundColor: context.state.currentStage && context.state.stages.indexOf(stage) <= context.state.stages.indexOf(context.state.currentStage) ? 'blue' : 'gray'
+                  }
+                 ]} />
+              )
+            )}
+          </View>
+          <View style={styles.progressPad} />
+        </View>
+      </View>
+    )}
+  </StageProgress>
+</Stager>
+```
+
 
 ## Caveats
 
