@@ -1,2 +1,2 @@
-lib/*.js
+lib
 __tests__/*.js*
