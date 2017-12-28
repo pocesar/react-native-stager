@@ -119,7 +119,6 @@ exports[`<Stager /> goes to next and prev stage 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
           >
             hello
@@ -274,7 +273,6 @@ exports[`<Stager /> goes to next and prev stage 3`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
           >
             hello
@@ -427,7 +425,6 @@ exports[`<Stager /> goes to next and prev stage 4`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
           >
             hello
@@ -580,7 +577,6 @@ exports[`<Stager /> instance props 1`] = `
           <Text
             accessible={true}
             allowFontScaling={true}
-            disabled={false}
             ellipsizeMode="tail"
           >
             hello
@@ -805,7 +801,6 @@ exports[`<Stager /> progress and buttons 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
     >
       1
@@ -833,7 +828,6 @@ exports[`<Stager /> progress and buttons 1`] = `
     <Text
       accessible={true}
       allowFontScaling={true}
-      disabled={false}
       ellipsizeMode="tail"
     >
       true

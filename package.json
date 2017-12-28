@@ -1,12 +1,13 @@
 {
   "name": "react-native-stager",
-  "version": "0.2.4",
+  "version": "1.0.0",
   "description": "A performant wizard-like multi stages component for React Native without a router",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
     "test": "npm run compile && npm run compile-tests && jest",
     "compile-tests": "tsc -p tsconfig-base.json",
+    "snapshots": "jest --updateSnapshot",
     "compile": "tsc -p tsconfig.json",
     "prepublishOnly": "npm run test"
   },
@@ -38,13 +39,12 @@
     "@types/prop-types": "*"
   },
   "devDependencies": {
-    "@types/enzyme": "^2.8.4",
-    "@types/jest": "^20.0.6",
-    "@types/react-test-renderer": "^15.5.2",
-    "enzyme": "^2.9.1",
-    "jest": "^20.0.4",
-    "react-test-renderer": "^16.0.0-beta.2",
-    "typescript": "^2.4.2"
+    "@types/jest": "^21.1.9",
+    "@types/react-test-renderer": "^16.0.0",
+    "babel-preset-react-native": "^4.0.0",
+    "jest": "^22.0.4",
+    "react-test-renderer": "^16.2.0",
+    "typescript": "^2.6.2"
   },
   "jest": {
     "preset": "react-native",

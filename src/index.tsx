@@ -371,7 +371,7 @@ export class Stager extends React.Component<StagerProps, StagerState> {
     let hasProgress: StageProgress | null = null
 
     React.Children.forEach(this.props.children, (child) => {
-      const childType: React.ComponentClass = (child as any)['type']
+      const childType: any = (child as any)['type']
 
       if (childType === StageProgress) {
         hasProgress = child as any
@@ -390,7 +390,7 @@ export class Stager extends React.Component<StagerProps, StagerState> {
     const stagesNames: string[] = []
 
     React.Children.forEach(this.props.children, (child) => {
-      const childType: React.ComponentClass = (child as any)['type']
+      const childType: any = (child as any)['type']
 
       if (childType === Stage) {
         stagesNames.push((child as any)['key'])

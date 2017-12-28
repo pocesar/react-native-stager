@@ -47,7 +47,7 @@ describe('<Stager />', () => {
       </Stager>
     )
 
-    const stager: Stager = two.getInstance()
+    const stager: Stager = two.getInstance() as any
     expect(stager.state.stages).toEqual(['1', '2'])
     expect(stager.state.currentStage).toEqual('1')
     expect(two.toJSON()).toMatchSnapshot()
@@ -121,13 +121,13 @@ describe('<Stager />', () => {
 
     expect(stager.toJSON()).toMatchSnapshot()
 
-    await (stager.getInstance() as Stager).next()
+    await (stager.getInstance() as any as Stager).next()
 
-    expect(stager.getInstance().state.stageState.noPrevious).toBe(true)
+    expect((stager.getInstance() as any as Stager).state.stageState.noPrevious).toBe(true)
     expect(stager.toJSON()).toThrowErrorMatchingSnapshot()
     expect(loaded).toBe(2)
 
-    await (stager.getInstance() as Stager).next()
+    await (stager.getInstance() as any as Stager).next()
   })
 
   test('continue', async (done) => {
@@ -143,7 +143,7 @@ describe('<Stager />', () => {
       </Stager>
     )
 
-    const _stager: Stager = stager.getInstance()
+    const _stager: Stager = stager.getInstance() as any
 
     setTimeout(() => {
       expect(_stager.state.stageState.canContinue).toBe(false)
@@ -169,7 +169,7 @@ describe('<Stager />', () => {
         </Stage>
       </Stager>
     )
-    const s: Stager = stager.getInstance()
+    const s: Stager = stager.getInstance() as any
 
     expect(changed).toBe(1)
 
@@ -219,11 +219,11 @@ describe('<Stager />', () => {
       </Stager>
     )
 
-    await (stager.getInstance() as Stager).notify()
+    await (stager.getInstance() as any as Stager).notify()
 
     expect(stager.toJSON()).toMatchSnapshot()
 
-    await (stager.getInstance() as Stager).next()
+    await (stager.getInstance() as any as Stager).next()
 
     expect(stager.toJSON()).toThrowErrorMatchingSnapshot()
 

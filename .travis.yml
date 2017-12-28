@@ -4,8 +4,9 @@ before_install:
   - npm i -g npm-install-peers coveralls --progress=false
 before_script:
   - npm-install-peers
-  - npm i react@16.0.0-alpha.12 --progress=false || true
+  - npm i react --progress=false || true
+  - rm -rf node_modules/@types/node
 after_success:
   - cat ./coverage/lcov.info | coveralls
 node_js:
-  - "8"
+  - "9"
