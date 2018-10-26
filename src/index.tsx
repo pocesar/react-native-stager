@@ -119,7 +119,7 @@ export class Stage extends React.Component<StageProps, never> {
     super(props, context)
   }
 
-  context: Context;
+  context!: Context;
 
   refresh = async () => {
     if (this.props.continue) {
@@ -175,7 +175,7 @@ export class StageButtons extends React.Component<StageConfig> {
     fn: PropTypes.any as any
   }
 
-  context: Context;
+  context!: Context;
 
   passProps: StagePassContext = {
     context: this.context.fn
@@ -190,8 +190,8 @@ export class StageProgress extends React.Component<StageConfig> {
   static contextTypes: Context = {
     fn: PropTypes.any as any
   }
-
-  context: Context;
+ 
+  context!: Context;
 
   passProps: StagePassContext = {
     context: this.context.fn
