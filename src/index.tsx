@@ -217,6 +217,7 @@ export interface StagerState {
 
 export interface StagerProps {
   onChange?: (stage: string, direction: number) => void;
+  style: any
 }
 
 export class Stager extends React.Component<StagerProps, StagerState> {
@@ -459,8 +460,9 @@ export class Stager extends React.Component<StagerProps, StagerState> {
   }
 
   render(){
+    let styleContainer = (this.props.style)?this.props.style:{} 
     return (
-      <KeyboardAvoidingView behavior="position" style={styles.stageContainer} keyboardVerticalOffset={-15}>
+      <KeyboardAvoidingView behavior="position" style={[styles.stageContainer,styleContainer]} keyboardVerticalOffset={-15}>
         {this.state.hasProgress ? this.state.hasProgress : this.progress()}
         {this.state.time && this.state.stage}
         {this.state.hasButtons ? this.state.hasButtons : this.buttons()}
