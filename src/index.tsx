@@ -217,7 +217,7 @@ export interface StagerState {
 
 export interface StagerProps {
   onChange?: (stage: string, direction: number) => void;
-  style: any
+  style?: StyleProps<ViewStyle>;
 }
 
 export class Stager extends React.Component<StagerProps, StagerState> {
