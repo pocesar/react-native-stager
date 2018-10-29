@@ -119,7 +119,7 @@ export class Stage extends React.Component<StageProps, never> {
     super(props, context)
   }
 
-  context: Context;
+  context!: Context;
 
   refresh = async () => {
     if (this.props.continue) {
@@ -175,7 +175,7 @@ export class StageButtons extends React.Component<StageConfig> {
     fn: PropTypes.any as any
   }
 
-  context: Context;
+  context!: Context;
 
   passProps: StagePassContext = {
     context: this.context.fn
@@ -190,8 +190,8 @@ export class StageProgress extends React.Component<StageConfig> {
   static contextTypes: Context = {
     fn: PropTypes.any as any
   }
-
-  context: Context;
+ 
+  context!: Context;
 
   passProps: StagePassContext = {
     context: this.context.fn
@@ -217,6 +217,7 @@ export interface StagerState {
 
 export interface StagerProps {
   onChange?: (stage: string, direction: number) => void;
+  style?: StyleProps<ViewStyle>;
 }
 
 export class Stager extends React.Component<StagerProps, StagerState> {
@@ -459,8 +460,9 @@ export class Stager extends React.Component<StagerProps, StagerState> {
   }
 
   render(){
+    let styleContainer = (this.props.style)?this.props.style:{} 
     return (
-      <KeyboardAvoidingView behavior="position" style={styles.stageContainer} keyboardVerticalOffset={-15}>
+      <KeyboardAvoidingView behavior="position" style={[styles.stageContainer,styleContainer]} keyboardVerticalOffset={-15}>
         {this.state.hasProgress ? this.state.hasProgress : this.progress()}
         {this.state.time && this.state.stage}
         {this.state.hasButtons ? this.state.hasButtons : this.buttons()}
